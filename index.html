@@ -11,6 +11,17 @@
       background: url('https://i.ibb.co/YZ8zjzd/arcane2-desktop-default-2x.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
+      position: relative; /* Necessário para posicionar a logo */
+    }
+
+    /* Estilo para a logo */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 150px; /* Aumentei o tamanho da logo */
+      height: auto;
+      z-index: 10; /* Garante que a logo fique acima de outros elementos */
     }
 
     .login-container {
@@ -160,6 +171,9 @@
   </style>
 </head>
 <body>
+  <!-- Logo no canto superior esquerdo -->
+  <img class="logo" src="https://lolstatic-a.akamaihd.net/rso-authenticator-ui/0.78.34/assets/arcane2RiotLogoSmall.svg" alt="Riot Games Logo">
+
   <div class="login-container">
     <div class="login-box">
       <h1>Fazer login</h1>
